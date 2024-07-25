@@ -7,7 +7,12 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import java.util.List;
 
-@EnableMongoRepositories
+
 public interface MessageRepository extends MongoRepository<Message,String> {
     List<Message> findByConversationId(String conversationId);
+    List<Message> findByConversationIdOrderByTimestampAsc(String conversationId);
+
+//    List<Message> findBySenderId(String userId);
+
+    List<Message> findByConversationIdInOrderByTimestampDesc(List<String> conversationIds);
 }

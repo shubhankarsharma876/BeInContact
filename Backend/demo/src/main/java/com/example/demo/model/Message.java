@@ -13,7 +13,6 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Message {
-
     @Id
     private String id;
     private String senderId;

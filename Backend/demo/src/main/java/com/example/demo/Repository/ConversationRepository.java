@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import java.util.List;
 
 
-@EnableMongoRepositories
+
 public interface ConversationRepository extends MongoRepository<Conversation,String> {
     List<Conversation> findByParticipantIdsContaining(String userId);
 }
